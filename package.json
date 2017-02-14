@@ -1,0 +1,39 @@
+{
+  "name": "express-session-access",
+  "version": "1.0.0",
+  "description": "Manipulate your express session via an API in test environments",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && npm run unit && npm run cover && npm run check-coverage",
+    "lint": "eslint .",
+    "unit": "mocha test/ --recursive",
+    "cover": "istanbul cover _mocha -- test/ --recursive",
+    "check-coverage": "istanbul check-coverage --statement 100 --branch 100 --function 100 --line 100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HughePaul/express-session-access.git"
+  },
+  "keywords": [
+    "express",
+    "session",
+    "test"
+  ],
+  "author": "Paul Winkler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HughePaul/express-session-access/issues"
+  },
+  "homepage": "https://github.com/HughePaul/express-session-access#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.15.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "lodash": "^4.17.4"
+  }
+}
