@@ -111,4 +111,21 @@ describe('sessionAccess', () => {
     });
 
 
+    it('should return an error from the JSON parser', () => {
+        req.method = 'POST';
+        let middleware = sessionAccess();
+        let err = new Error();
+        middleware.sessionAccess.parser = sinon.stub().yields(err);
+        middleware(req, res, next);
+        next.should.have.been.calledWithExactly(err);
+    });
+
+    it('should call the next callback for any other request type', () => {
+        req.method = 'OPTIONS';
+        let middleware = sessionAccess();
+        middleware(req, res, next);
+        next.should.have.been.calledWithExactly();
+    });
+
+
 });
