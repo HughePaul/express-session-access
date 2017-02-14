@@ -23,7 +23,7 @@ app.use('/session', sessionAccess());
 Updating access can be limited with whitelisting:
 
 ```
-app.use('/session', sessionAccess(['user.data', '']));
+app.use('/session', sessionAccess(['user.data', 'settings']));
 ```
 
 A GET request will return the entire session object as JSON.
